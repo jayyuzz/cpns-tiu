@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tes Intelegensi Umum CPNS 2026/2027: bahan, soal, infografis</title>
+<meta name="description" content="Kumpulan handbook, latihan soal, infografis, dan asesmen diagnostik TIU CPNS 2026/2027 dalam satu halaman.">
+<style>
+  :root {
+    --paper: #FBFAF7;
+    --ink: #16150F;
+    --muted: #6F6A62;
+    --line: #E2DED4;
+    --accent: #9C3B2A;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 17px; line-height: 1.62; font-kerning: normal;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 1rem; top: 1rem; background: var(--ink); color: var(--paper); padding: .6rem 1rem; z-index: 9; }
+  .wrap { width: min(1080px, 100% - 3rem); margin-inline: auto; }
+
+  header.site { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--paper); z-index: 5; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 0; flex-wrap: wrap; }
+  .brand { font-family: var(--serif); font-size: 1.05rem; letter-spacing: .01em; text-decoration: none; }
+  .brand b { color: var(--accent); font-weight: 700; }
+  nav.toc { display: flex; gap: 1.35rem; flex-wrap: wrap; }
+  nav.toc a { text-decoration: none; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: .5rem 0; border-bottom: 1px solid transparent; }
+  nav.toc a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  .hero { padding: 5.5rem 0 4rem; border-bottom: 1px solid var(--line); }
+  .kicker { font-family: var(--mono); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin: 0 0 1.4rem; }
+  .hero h1 { font-family: var(--serif); font-weight: 600; letter-spacing: -.015em; font-size: clamp(2.1rem, 5.4vw, 3.65rem); line-height: 1.08; margin: 0 0 1.5rem; max-width: 24ch; text-wrap: balance; }
+  .hero p.lead { font-size: clamp(1.02rem, 1.6vw, 1.18rem); color: var(--muted); max-width: 62ch; margin: 0 0 2.4rem; }
+  .hero p.lead strong { color: var(--ink); font-weight: 600; }
+  .inventory { display: flex; flex-wrap: wrap; gap: 0 2.6rem; margin: 0; padding: 1.4rem 0 0; list-style: none; border-top: 1px solid var(--line); max-width: 760px; }
+  .inventory li { padding: .35rem 0; }
+  .inventory b { display: block; font-family: var(--serif); font-size: 1.55rem; font-weight: 600; line-height: 1.15; }
+  .inventory span { font-size: .78rem; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+
+  section.block { padding: 4.2rem 0; border-bottom: 1px solid var(--line); }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .head h2 { font-family: var(--serif); font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 600; margin: 0; letter-spacing: -.01em; }
+  .head .count { font-family: var(--mono); font-size: .76rem; color: var(--muted); letter-spacing: .08em; }
+  .note { color: var(--muted); max-width: 60ch; margin: -1.1rem 0 2rem; font-size: .95rem; }
+
+  ol.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .row { border-bottom: 1px solid var(--line); }
+  .row-link { display: grid; grid-template-columns: 3.2rem 1fr auto; gap: 1.2rem; align-items: baseline; text-decoration: none; padding: 1.15rem .25rem; transition: background-color .15s ease; }
+  .row-link:hover { background: #F4F1EA; }
+  .num { font-family: var(--mono); font-size: .8rem; color: var(--accent); }
+  .row-title { display: block; font-weight: 600; font-size: 1.02rem; line-height: 1.4; }
+  .row-desc { display: block; color: var(--muted); font-size: .92rem; margin-top: .2rem; }
+  .row-meta { text-align: right; font-size: .78rem; color: var(--muted); letter-spacing: .03em; white-space: nowrap; }
+  .row-go { display: block; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink); margin-top: .3rem; }
+  .row-link:hover .row-go { color: var(--accent); }
+
+  .figs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2.4rem 2rem; }
+  .fig { margin: 0; }
+  .fig a { display: block; border: 1px solid var(--line); background: #fff; }
+  .fig img { display: block; width: 100%; height: auto; }
+  .fig figcaption { margin-top: .7rem; font-size: .9rem; color: var(--muted); }
+  .img-fail img { display: none; }
+  .img-fail a::after { content: 'Gambar tidak bisa dimuat di halaman ini. Klik untuk membuka di Drive.'; display: block; padding: 2.2rem 1.2rem; color: var(--muted); font-size: .9rem; background: #F4F1EA; }
+  .fig-num { font-family: var(--mono); color: var(--accent); font-size: .78rem; margin-right: .5rem; }
+
+  footer.site { padding: 2.6rem 0 3.4rem; color: var(--muted); font-size: .88rem; }
+  footer.site p { margin: 0 0 .5rem; max-width: 62ch; }
+  footer.site a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .source { font-family: var(--mono); font-size: .75rem; letter-spacing: .04em; margin-top: 1rem; }
+
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .hero { padding: 3.2rem 0 2.8rem; }
+    .row-link { grid-template-columns: 2.2rem 1fr; gap: .9rem; }
+    .row-meta { grid-column: 2; text-align: left; display: flex; align-items: center; gap: .8rem; }
+    .row-go { margin: 0; }
+    .figs { grid-template-columns: 1fr; gap: 2rem; }
+    nav.toc { gap: 1rem; }
+    nav.toc a { font-size: .76rem; padding: .55rem 0; }
+    .inventory { gap: 0 1.8rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke isi</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#main">TIU <b>CPNS</b> 2026/2027</a>
+    <nav class="toc" aria-label="Isi halaman">
+      <a href="#bahan-belajar">Bahan Belajar</a>
+      <a href="#latihan-soal">Latihan Soal</a>
+      <a href="#infografis">Infografis</a>
+      <a href="#asesmen">Asesmen</a>
+      <a href="#tambahan">Berkas Lain</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <section class="hero">
+      <p class="kicker">Tes Intelegensi Umum, Seleksi Kompetensi Dasar</p>
+      <h1>Tes Intelegensi Umum CPNS 2026/2027, seluruh bahannya di satu halaman.</h1>
+      <p class="lead">Handbook verbal, numerik, dan figural, delapan set latihan soal, tujuh infografis ringkas, dan satu paket asesmen diagnostik. <strong>Setiap berkas dibuka langsung dari Google Drive sumbernya.</strong> Tidak ada materi tambahan yang saya karang.</p>
+      <ul class="inventory">
+        <li><b>5</b><span>Handbook dan modul</span></li>
+        <li><b>8</b><span>Set latihan soal</span></li>
+        <li><b>7</b><span>Infografis</span></li>
+        <li><b>4</b><span>Berkas asesmen</span></li>
+        <li><b>3</b><span>Berkas pendukung</span></li>
+      </ul>
+    </section>
+
+    <section class="block" id="bahan-belajar">
+      <div class="head">
+        <h2>Bahan Belajar</h2>
+        <span class="count">5 berkas PDF</span>
+      </div>
+      <p class="note">Tiga handbook untuk verbal, numerik, dan figural, lalu dua modul tematik untuk numerik dan kecukupan data.</p>
+      <ol class="rows">
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/10WKChMZ4YrQ_QTqatLqAl58EbWW8-_1v/view" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <span class="row-body">
+            <span class="row-title">Handbook TIU SKD CPNS Seri 1: Kemampuan Verbal</span>
+            <span class="row-desc">Pola analogi, hubungan kata, sinonim dan antonim.</span>
+          </span>
+          <span class="row-meta">Verbal<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1RQvpImnHLEgFIcBivstl2574hwK081sx/view" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <span class="row-body">
+            <span class="row-title">Handbook TIU SKD CPNS Seri 2: Kemampuan Numerik</span>
+            <span class="row-desc">Deret angka, aritmetika sosial, dan perbandingan kuantitatif.</span>
+          </span>
+          <span class="row-meta">Numerik<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1RFq5XCSpWaxnZ3QUfSsNn6Plv2xTY2vy/view" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <span class="row-body">
+            <span class="row-title">Handbook TIU SKD CPNS Seri 3: Kemampuan Figural</span>
+            <span class="row-desc">Pencerminan, rotasi, dan pola bangun untuk soal figural.</span>
+          </span>
+          <span class="row-meta">Figural<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1SGlgCaunMKxcnUps9JjzGiTgvSek-AsO/view" target="_blank" rel="noopener">
+          <span class="num">04</span>
+          <span class="row-body">
+            <span class="row-title">Materi TIU #2: Kemampuan Numerik</span>
+            <span class="row-desc">Ringkasan rumus dan trik hitung cepat untuk soal numerik.</span>
+          </span>
+          <span class="row-meta">Numerik<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1-2dZrpFwcrE-hLKAeQrqFKdlkGJs7TDI/view" target="_blank" rel="noopener">
+          <span class="num">05</span>
+          <span class="row-body">
+            <span class="row-title">Modul Harian TIU #7: Kecukupan Data</span>
+            <span class="row-desc">Cara menilai apakah data pada soal sudah cukup untuk menjawab.</span>
+          </span>
+          <span class="row-meta">Kecukupan Data<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      </ol>
+    </section>
+
+    <section class="block" id="latihan-soal">
+      <div class="head">
+        <h2>Latihan Soal</h2>
+        <span class="count">8 berkas PDF</span>
+      </div>
+      <p class="note">Dua paket berisi 50 soal, sisanya paket tematik. Kerjakan dulu tanpa kunci, baru cocokkan.</p>
+      <ol class="rows">
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/17mpM_taQxDw5Nz29189DOUbvTgyewIHQ/view" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <span class="row-body">
+            <span class="row-title">50 Soal Hubungan Kuantitas X dan Y</span>
+            <span class="row-desc">Perbandingan dua besaran tanpa hitung penuh.</span>
+          </span>
+          <span class="row-meta">50 soal<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1YRb3oicpfDAxWiH_qwJNsjrWYDpOhj1l/view" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <span class="row-body">
+            <span class="row-title">50 Soal Perbandingan Kuantitatif (Cerita)</span>
+            <span class="row-desc">Soal cerita perbandingan senilai dan berbalik nilai.</span>
+          </span>
+          <span class="row-meta">50 soal<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1F0y29Mlf7xuKlEXOpRQ2_XYu-EvtbAd4/view" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <span class="row-body">
+            <span class="row-title">Deret Angka Model Tabel</span>
+            <span class="row-desc">Pola angka yang disajikan dalam bentuk tabel.</span>
+          </span>
+          <span class="row-meta">Deret angka<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1O1dQqNmGWHB-LmMj3keVpy4DGIqUIaUZ/view" target="_blank" rel="noopener">
+          <span class="num">04</span>
+          <span class="row-body">
+            <span class="row-title">Deret Angka TIU SKD CPNS</span>
+            <span class="row-desc">Latihan pola bilangan naik, turun, dan berselang.</span>
+          </span>
+          <span class="row-meta">Deret angka<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1Z28GEWnEoEohij-YCSCc6NBIB8Np_MjE/view" target="_blank" rel="noopener">
+          <span class="num">05</span>
+          <span class="row-body">
+            <span class="row-title">Hitung Cepat: Kesetaraan Bilangan</span>
+            <span class="row-desc">Menyamakan bentuk pecahan, desimal, dan persen.</span>
+          </span>
+          <span class="row-meta">Hitung cepat<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1lU1Zjn3Vu9BUfwecEULONj6T-MZbGx0z/view" target="_blank" rel="noopener">
+          <span class="num">06</span>
+          <span class="row-body">
+            <span class="row-title">Kecukupan Data</span>
+            <span class="row-desc">Menentukan cukup atau tidaknya informasi pada soal.</span>
+          </span>
+          <span class="row-meta">Kecukupan data<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/15dWNwZW9J8qmkYPeVgRP-kI5rnTVuZgC/view" target="_blank" rel="noopener">
+          <span class="num">07</span>
+          <span class="row-body">
+            <span class="row-title">Pecahan dan Desimal</span>
+            <span class="row-desc">Operasi pecahan, desimal, dan konversinya.</span>
+          </span>
+          <span class="row-meta">Pecahan<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1EsTzwNuNRp5h7bk4a1LqYh9QXxJUpwmd/view" target="_blank" rel="noopener">
+          <span class="num">08</span>
+          <span class="row-body">
+            <span class="row-title">Silogisme</span>
+            <span class="row-desc">Penarikan kesimpulan dari dua premis.</span>
+          </span>
+          <span class="row-meta">Silogisme<span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      </ol>
+    </section>
+
+    <section class="block" id="infografis">
+      <div class="head">
+        <h2>Infografis</h2>
+        <span class="count">7 gambar</span>
+      </div>
+      <p class="note">Rangkuman satu halaman per topik. Klik gambar untuk membuka versi penuh di Drive.</p>
+      <div class="figs">
+        <figure class="fig">
+          <a href="https://drive.google.com/file/d/17DZF0W-6mvn2e9OZISHm7Chj9-4-SWLK/view" target="_blank" rel="noopener">
+            <img src="https://lh3.googleusercontent.com/d/17DZF0W-6mvn2e9OZISHm7Chj9-4-SWLK=w800" alt="Infografis: Analogi Kata dan Kalimat" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-fail')">
+          </a>
+          <figcaption><span class="fig-num">01</span>Analogi Kata dan Kalimat</figcaption>
+        </figure>
+        <figure class="fig">
+          <a href="https://drive.google.com/file/d/1wHBqXE_iPbhVHSCZhr1kzkA-zo-KlyHj/view" target="_blank" rel="noopener">
+            <img src="https://lh3.googleusercontent.com/d/1wHBqXE_iPbhVHSCZhr1kzkA-zo-KlyHj=w800" alt="Infografis: Deret Angka" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-fail')">
+          </a>
+          <figcaption><span class="fig-num">02</span>Deret Angka</figcaption>
+        </figure>
+        <figure class="fig">
+          <a href="https://drive.google.com/file/d/1rHtDfgJx5jM43j1UCeeqJfe54NV8HHdA/view" target="_blank" rel="noopener">
+            <img src="https://lh3.googleusercontent.com/d/1rHtDfgJx5jM43j1UCeeqJfe54NV8HHdA=w800" alt="Infografis: Tes Figural" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-fail')">
+          </a>
+          <figcaption><span class="fig-num">03</span>Tes Figural</figcaption>
+        </figure>
+        <figure class="fig">
+          <a href="https://drive.google.com/file/d/1BKcs_n6HLlcxit1MF8d38G2n7owYZfaH/view" target="_blank" rel="noopener">
+            <img src="https://lh3.googleusercontent.com/d/1BKcs_n6HLlcxit1MF8d38G2n7owYZfaH=w800" alt="Infografis: Pecahan, Desimal dan Persentase" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-fail')">
+          </a>
+          <figcaption><span class="fig-num">04</span>Pecahan, Desimal dan Persentase</figcaption>
+        </figure>
+        <figure class="fig">
+          <a href="https://drive.google.com/file/d/1HWH5BRAUDEExi5keamr_5yJXaKC_8Lnm/view" target="_blank" rel="noopener">
+            <img src="https://lh3.googleusercontent.com/d/1HWH5BRAUDEExi5keamr_5yJXaKC_8Lnm=w800" alt="Infografis: Penalaran Analitis, Tabel dan Grafik" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-fail')">
+          </a>
+          <figcaption><span class="fig-num">05</span>Penalaran Analitis, Tabel dan Grafik</figcaption>
+        </figure>
+        <figure class="fig">
+          <a href="https://drive.google.com/file/d/1pYi0hpc8Bg7HKyIgct9OIynlhTGjXIvX/view" target="_blank" rel="noopener">
+            <img src="https://lh3.googleusercontent.com/d/1pYi0hpc8Bg7HKyIgct9OIynlhTGjXIvX=w800" alt="Infografis: Perbandingan Senilai dan Berbalik Nilai" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-fail')">
+          </a>
+          <figcaption><span class="fig-num">06</span>Perbandingan Senilai dan Berbalik Nilai</figcaption>
+        </figure>
+        <figure class="fig">
+          <a href="https://drive.google.com/file/d/1RMoIaLFBOV1soFbGlUPsQICDYmgd1uno/view" target="_blank" rel="noopener">
+            <img src="https://lh3.googleusercontent.com/d/1RMoIaLFBOV1soFbGlUPsQICDYmgd1uno=w800" alt="Infografis: Silogisme" width="1122" height="1402" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-fail')">
+          </a>
+          <figcaption><span class="fig-num">07</span>Silogisme</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block" id="asesmen">
+      <div class="head">
+        <h2>Asesmen Diagnostik</h2>
+        <span class="count">Paket awal, 4 berkas</span>
+      </div>
+      <p class="note">Kerjakan paket A tanpa bantuan, cocokkan dengan pembahasan, lalu ulangi dengan paket B untuk melihat apakah titik lemahnya bergeser.</p>
+      <ol class="rows">
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1BEevPv1-QeNQsS-amm6U1w_cdhXUemA1/view" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <span class="row-body">
+            <span class="row-title">Paket A: soal</span>
+            <span class="row-desc">Paket awal untuk mengukur titik lemah sebelum belajar.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1l9yCGsE-DBLGGdnuN7efvpk5umSBHl56/view" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <span class="row-body">
+            <span class="row-title">Paket B: soal</span>
+            <span class="row-desc">Paket paralel sebagai pembanding hasil paket A.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/149Gk3dlPRIxQ-Q6KQ7aigEhEvA6iuJN9/view" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <span class="row-body">
+            <span class="row-title">Paket A: kunci dan pembahasan</span>
+            <span class="row-desc">Pembahasan tiap butir, bukan hanya kunci jawaban.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1NB4NTKEE3z1wLj5vWv3Olg1cc8A0Sz6m/view" target="_blank" rel="noopener">
+          <span class="num">04</span>
+          <span class="row-body">
+            <span class="row-title">Paket B: kunci dan pembahasan</span>
+            <span class="row-desc">Pembahasan tiap butir untuk paket B.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      </ol>
+    </section>
+
+    <section class="block" id="tambahan">
+      <div class="head">
+        <h2>Berkas Lain di Folder Sumber</h2>
+        <span class="count">3 berkas</span>
+      </div>
+      <ol class="rows">
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1Kwn6dUBaLqvlrqFAo6oR0tojUkjj6AEQ/view" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <span class="row-body">
+            <span class="row-title">Kunci Terlarang Wajib Tahu</span>
+            <span class="row-desc">Pola jawaban jebakan yang paling sering bikin salah.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/15mX391rPb9KSfC4p1IunHCbebTBXI2kU/view" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <span class="row-body">
+            <span class="row-title">Bundling Fokus TIU Gelombang 1</span>
+            <span class="row-desc">Kumpulan soal terbaru untuk gelombang pertama.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      <li class="row">
+        <a class="row-link" href="https://drive.google.com/file/d/1TxGuMzXYoL0grrojWd4v8WTCwcKh0iCS/view" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <span class="row-body">
+            <span class="row-title">Daftar Video Pembelajaran SKD CPNS</span>
+            <span class="row-desc">Tautan video pendamping untuk tiap materi.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>
+      </ol>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Halaman ini hanya menautkan berkas dari folder Google Drive yang Anda berikan. Tidak ada berkas yang disalin ke server lain, dan tidak ada data pengunjung yang dikumpulkan.</p>
+    <p class="source">Sumber: <a href="https://drive.google.com/drive/folders/1657f6qK9Zaelu1yl0sbZC2y3uUhrVodn" target="_blank" rel="noopener">folder "1. Tes Intelegensi Umum" di Google Drive</a>, 27 berkas.</p>
+  </div>
+</footer>
+</body>
+</html>
