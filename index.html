@@ -3,59 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pusat Materi TIU CPNS 2026/2027</title>
+<title>Pusat Materi TIU CPNS 2026/2027 - Edisi Pendidikan</title>
 <style>
   :root {
     --bg: #FDFCFB;
     --surface: #FFFFFF;
-    --text: #2D2A26;
-    --muted: #6B665E;
-    --accent: #2E5A88; /* Education Navy Blue */
-    --border: #E8E4DE;
-    --highlight: #F4F7FA;
+    --ink: #2A1708;
+    --muted: #6B4A2E;
+    --accent: #C2410C;
+    --border: #E8D5C4;
+    --tint: #FFF7EB;
     --serif: "Georgia", "Times New Roman", serif;
     --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+    --mono: "JetBrains Mono", monospace;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: var(--bg); color: var(--text);
+    margin: 0; background: var(--bg); color: var(--ink);
     font-family: var(--sans); font-size: 17px; line-height: 1.6;
   }
   a { color: inherit; text-decoration: none; }
   .wrap { width: min(1100px, 100% - 3rem); margin-inline: auto; }
 
-  header.site { 
-    border-bottom: 3px solid var(--accent); 
-    padding: 1.5rem 0; 
+  header.site {
+    border-bottom: 3px solid var(--accent);
+    padding: 1.5rem 0;
     background: var(--surface);
     position: sticky; top: 0; z-index: 10;
     box-shadow: 0 2px 10px rgba(0,0,0,0.03);
   }
   .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--accent); }
+  .brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; }
   nav.toc { display: flex; gap: 1.5rem; }
   nav.toc a { font-size: .8rem; font-weight: 600; text-transform: uppercase; color: var(--muted); transition: color .2s; }
   nav.toc a:hover { color: var(--accent); }
 
-  .hero { padding: 6rem 0 5rem; text-align: center; max-width: 800px; margin-inline: auto; }
-  .hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.1; margin: 0 0 1.5rem; color: var(--text); }
-  .hero p { font-size: 1.1rem; color: var(--muted); margin-bottom: 3rem; }
+  .hero {
+    padding: 6rem 0 5rem;
+    text-align: center;
+    max-width: 800px;
+    margin-inline: auto;
+    color: var(--ink);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0 0 1.5rem;
+    color: var(--ink);
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 3rem;
+  }
 
-  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
-  .stat-card { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem; text-align: center; border-radius: 8px; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+  }
   .stat-val { display: block; font-size: 2rem; font-weight: 700; color: var(--accent); font-family: var(--serif); }
   .stat-lbl { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
 
   section.block { padding: 5rem 0; border-bottom: 1px solid var(--border); }
   .head { margin-bottom: 3rem; }
-  .head h2 { font-family: var(--serif); font-size: 2rem; margin: 0 0 0.5rem; color: var(--text); }
+  .head h2 { font-family: var(--serif); font-size: 2rem; margin: 0 0 0.5rem; color: var(--ink); }
   .head p { color: var(--muted); margin: 0; }
 
   ol.rows { list-style: none; margin: 0; padding: 0; }
   .row { border-bottom: 1px solid var(--border); transition: background .2s; }
-  .row:hover { background: var(--highlight); }
-  .row-link { display: grid; grid-template-columns: 4rem 1fr auto; gap: 1.5rem; align-items: baseline; padding: 1.2rem 0; }
+  .row:hover { background: var(--tint); }
+  .row-link {
+    display: grid;
+    grid-template-columns: 4rem 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.2rem 0;
+  }
   .num { font-family: var(--mono); font-size: .85rem; color: var(--accent); font-weight: 600; }
   .row-title { display: block; font-weight: 600; font-size: 1.1rem; margin-bottom: .2rem; }
   .row-desc { display: block; color: var(--muted); font-size: .95rem; }
@@ -63,10 +96,21 @@
   .row-go { background: var(--accent); color: white; padding: .4rem .8rem; border-radius: 4px; font-size: .75rem; font-weight: 600; text-transform: uppercase; }
 
   .figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .fig { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform .2s; }
-  .fig:hover { transform: translateY(-5px); }
+  .fig {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
   .fig img { width: 100%; height: auto; display: block; }
-  .fig figcaption { padding: 1rem; font-size: .9rem; color: var(--text); font-weight: 600; border-top: 1px solid var(--border); }
+  .fig figcaption {
+    padding: 1rem;
+    font-size: .9rem;
+    color: var(--ink);
+    font-weight: 600;
+    border-top: 1px solid var(--border);
+  }
 
   footer { padding: 4rem 0; text-align: center; color: var(--muted); font-size: .9rem; }
   footer a { color: var(--accent); text-decoration: underline; }
@@ -79,12 +123,55 @@
     .hero h1 { font-size: 2rem; }
   }
 </style>
+
+  body {
+    background: linear-gradient(180deg, #FFF7EB 0%, #FDFCFB 100%);
+  }
+  .hero {
+    background: linear-gradient(135deg, #FFC98F 0%, #FFB347 100%);
+    color: #2A1708;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .row-link:hover {
+    background: rgba(255,201,143,0.15);
+  }
+  .fig:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(180,80,20,0.12);
+  }
+  .brand {
+    font-family: "Georgia", serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #C2410C, #F59E0B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
 </head>
 <body>
 
 <header class="site">
   <div class="wrap bar">
-    <span class="brand">TIU <span style="color:var(--text)">CPNS</span></span>
+    <span class="brand">TIU <span style="color:var(--ink)">CPNS</span></span>
     <nav class="toc">
       <a href="#bahan">Bahan Belajar</a>
       <a href="#latihan">Latihan Soal</a>
@@ -106,13 +193,14 @@
     </div>
   </section>
 
+  
   <section class="block" id="bahan">
     <div class="head">
       <h2>Bahan Belajar</h2>
-      <p>Kumpulan handbook teori untuk membangun fondasi pemahaman.</p>
+      <p>Kumpulan materi untuk membangun pemahaman Anda.</p>
     </div>
     <ol class="rows">
-            <li class="row">
+      <li class="row">
         <a class="row-link" href="docs/Handbook_TIU_SKD_CPNS_Seri1_Kemampuan_Verbal.pdf" target="_blank" rel="noopener">
           <span class="num">01</span>
           <span class="row-body">
@@ -121,8 +209,7 @@
           </span>
           <span class="row-meta">Verbal<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/Handbook_TIU_SKD_CPNS_Seri2_Kemampuan_Numerik.pdf" target="_blank" rel="noopener">
           <span class="num">02</span>
           <span class="row-body">
@@ -131,8 +218,7 @@
           </span>
           <span class="row-meta">Numerik<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/Handbook_TIU_SKD_CPNS_Seri3_Kemampuan_Figural.pdf" target="_blank" rel="noopener">
           <span class="num">03</span>
           <span class="row-body">
@@ -141,8 +227,7 @@
           </span>
           <span class="row-meta">Figural<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/materi-tiu-2-kemampuan-numerik.pdf" target="_blank" rel="noopener">
           <span class="num">04</span>
           <span class="row-body">
@@ -151,8 +236,7 @@
           </span>
           <span class="row-meta">Numerik<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/modul-harian-tiu-7-kecukupan-data.pdf" target="_blank" rel="noopener">
           <span class="num">05</span>
           <span class="row-body">
@@ -161,17 +245,15 @@
           </span>
           <span class="row-meta">Kecukupan Data<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-    </ol>
+      </li>    </ol>
   </section>
-
   <section class="block" id="latihan">
     <div class="head">
       <h2>Latihan Soal</h2>
-      <p>Uji kemampuan dengan bank soal tematik dan paket simulasi.</p>
+      <p>Kumpulan materi untuk membangun pemahaman Anda.</p>
     </div>
     <ol class="rows">
-            <li class="row">
+      <li class="row">
         <a class="row-link" href="docs/50-soal-hubungan-kuantitas-x-dan-y.pdf" target="_blank" rel="noopener">
           <span class="num">01</span>
           <span class="row-body">
@@ -180,8 +262,7 @@
           </span>
           <span class="row-meta">50 soal<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/50-soal-perbandingan-kuantitatif-cerita.pdf" target="_blank" rel="noopener">
           <span class="num">02</span>
           <span class="row-body">
@@ -190,8 +271,7 @@
           </span>
           <span class="row-meta">50 soal<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/deret-angka-model-tabel.pdf" target="_blank" rel="noopener">
           <span class="num">03</span>
           <span class="row-body">
@@ -200,8 +280,7 @@
           </span>
           <span class="row-meta">Deret angka<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/deret-angka-tiu-skd-cpns.pdf" target="_blank" rel="noopener">
           <span class="num">04</span>
           <span class="row-body">
@@ -210,8 +289,7 @@
           </span>
           <span class="row-meta">Deret angka<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/hitung-cepat-kesetaraan-bilangan.pdf" target="_blank" rel="noopener">
           <span class="num">05</span>
           <span class="row-body">
@@ -220,8 +298,7 @@
           </span>
           <span class="row-meta">Hitung cepat<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/kecukupan-data.pdf" target="_blank" rel="noopener">
           <span class="num">06</span>
           <span class="row-body">
@@ -230,8 +307,7 @@
           </span>
           <span class="row-meta">Kecukupan data<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/pecahan-desimal-tiu-skd-cpns.pdf" target="_blank" rel="noopener">
           <span class="num">07</span>
           <span class="row-body">
@@ -240,8 +316,7 @@
           </span>
           <span class="row-meta">Pecahan<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-      <li class="row">
+      </li>      <li class="row">
         <a class="row-link" href="docs/silogisme.pdf" target="_blank" rel="noopener">
           <span class="num">08</span>
           <span class="row-body">
@@ -250,8 +325,86 @@
           </span>
           <span class="row-meta">Silogisme<span class="row-go">Buka PDF</span></span>
         </a>
-      </li>
-    </ol>
+      </li>    </ol>
+  </section>
+  <section class="block" id="asesmen">
+    <div class="head">
+      <h2>Asesmen Diagnostik</h2>
+      <p>Kumpulan materi untuk membangun pemahaman Anda.</p>
+    </div>
+    <ol class="rows">
+      <li class="row">
+        <a class="row-link" href="docs/asesmen-diagnostik-paket-a-soal.pdf" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <span class="row-body">
+            <span class="row-title">Paket A: soal</span>
+            <span class="row-desc">Paket awal untuk mengukur titik lemah sebelum belajar.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>      <li class="row">
+        <a class="row-link" href="docs/asesmen-diagnostik-paket-b-soal.pdf" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <span class="row-body">
+            <span class="row-title">Paket B: soal</span>
+            <span class="row-desc">Paket paralel sebagai pembanding hasil paket A.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>      <li class="row">
+        <a class="row-link" href="docs/kunci-pembahasan-asesmen-paket-a.pdf" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <span class="row-body">
+            <span class="row-title">Paket A: kunci dan pembahasan</span>
+            <span class="row-desc">Pembahasan tiap butir, bukan hanya kunci jawaban.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>      <li class="row">
+        <a class="row-link" href="docs/kunci-pembahasan-asesmen-paket-b.pdf" target="_blank" rel="noopener">
+          <span class="num">04</span>
+          <span class="row-body">
+            <span class="row-title">Paket B: kunci dan pembahasan</span>
+            <span class="row-desc">Pembahasan tiap butir untuk paket B.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>    </ol>
+  </section>
+  <section class="block" id="tambahan">
+    <div class="head">
+      <h2>Berkas Pendukung</h2>
+      <p>Kumpulan materi untuk membangun pemahaman Anda.</p>
+    </div>
+    <ol class="rows">
+      <li class="row">
+        <a class="row-link" href="docs/kunci-terlarang-wajib-tahu.pdf" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <span class="row-body">
+            <span class="row-title">Kunci Terlarang Wajib Tahu</span>
+            <span class="row-desc">Pola jawaban jebakan yang paling sering bikin salah.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>      <li class="row">
+        <a class="row-link" href="docs/bundling-fokus-tiu-gelombang-1.pdf" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <span class="row-body">
+            <span class="row-title">Bundling Fokus TIU Gelombang 1</span>
+            <span class="row-desc">Kumpulan soal terbaru untuk gelombang pertama.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>      <li class="row">
+        <a class="row-link" href="docs/video-pembelajaran-skd-cpns.pdf" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <span class="row-body">
+            <span class="row-title">Daftar Video Pembelajaran SKD CPNS</span>
+            <span class="row-desc">Tautan video pendamping untuk tiap materi.</span>
+          </span>
+          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
+        </a>
+      </li>    </ol>
   </section>
 
   <section class="block" id="infografis">
@@ -262,135 +415,41 @@
     <div class="figs">
               <figure class="fig">
           <a href="docs/analogi-kata-dan-kalimat.png" target="_blank" rel="noopener">
-            <img src="docs/infografis/analogi-kata-dan-kalimat.png" alt="Infografis: Analogi Kata dan Kalimat" loading="lazy" onerror="this.alt='Infografis tidak dimuat. Buka PDF langsung dari tautan.';this.style.minHeight='80px';this.style.background='var(--highlight)'">
+            <img src="docs/infografis/analogi-kata-dan-kalimat.png" alt="Infografis: Analogi Kata dan Kalimat" loading="lazy" onerror="this.alt='Infografis tidak dimuat';this.style.minHeight='80px';this.style.background='var(--tint)';this.style.border='1px solid var(--border)'">
           </a>
           <figcaption><span class="fig-num">01</span>Analogi Kata dan Kalimat</figcaption>
-        </figure>
-        <figure class="fig">
+        </figure>        <figure class="fig">
           <a href="docs/deret-angka.png" target="_blank" rel="noopener">
-            <img src="docs/infografis/deret-angka.png" alt="Infografis: Deret Angka" loading="lazy" onerror="this.alt='Infografis tidak dimuat. Buka PDF langsung dari tautan.';this.style.minHeight='80px';this.style.background='var(--highlight)'">
+            <img src="docs/infografis/deret-angka.png" alt="Infografis: Deret Angka" loading="lazy" onerror="this.alt='Infografis tidak dimuat';this.style.minHeight='80px';this.style.background='var(--tint)';this.style.border='1px solid var(--border)'">
           </a>
           <figcaption><span class="fig-num">02</span>Deret Angka</figcaption>
-        </figure>
-        <figure class="fig">
+        </figure>        <figure class="fig">
           <a href="docs/tes-figural.png" target="_blank" rel="noopener">
-            <img src="docs/infografis/tes-figural.png" alt="Infografis: Tes Figural" loading="lazy" onerror="this.alt='Infografis tidak dimuat. Buka PDF langsung dari tautan.';this.style.minHeight='80px';this.style.background='var(--highlight)'">
+            <img src="docs/infografis/tes-figural.png" alt="Infografis: Tes Figural" loading="lazy" onerror="this.alt='Infografis tidak dimuat';this.style.minHeight='80px';this.style.background='var(--tint)';this.style.border='1px solid var(--border)'">
           </a>
           <figcaption><span class="fig-num">03</span>Tes Figural</figcaption>
-        </figure>
-        <figure class="fig">
+        </figure>        <figure class="fig">
           <a href="docs/pecahan-desimal-dan-persentase.png" target="_blank" rel="noopener">
-            <img src="docs/infografis/pecahan-desimal-dan-persentase.png" alt="Infografis: Pecahan, Desimal dan Persentase" loading="lazy" onerror="this.alt='Infografis tidak dimuat. Buka PDF langsung dari tautan.';this.style.minHeight='80px';this.style.background='var(--highlight)'">
+            <img src="docs/infografis/pecahan-desimal-dan-persentase.png" alt="Infografis: Pecahan, Desimal dan Persentase" loading="lazy" onerror="this.alt='Infografis tidak dimuat';this.style.minHeight='80px';this.style.background='var(--tint)';this.style.border='1px solid var(--border)'">
           </a>
           <figcaption><span class="fig-num">04</span>Pecahan, Desimal dan Persentase</figcaption>
-        </figure>
-        <figure class="fig">
+        </figure>        <figure class="fig">
           <a href="docs/penalaran-analitis-tabel-dan-grafik.png" target="_blank" rel="noopener">
-            <img src="docs/infografis/penalaran-analitis-tabel-dan-grafik.png" alt="Infografis: Penalaran Analitis, Tabel dan Grafik" loading="lazy" onerror="this.alt='Infografis tidak dimuat. Buka PDF langsung dari tautan.';this.style.minHeight='80px';this.style.background='var(--highlight)'">
+            <img src="docs/infografis/penalaran-analitis-tabel-dan-grafik.png" alt="Infografis: Penalaran Analitis, Tabel dan Grafik" loading="lazy" onerror="this.alt='Infografis tidak dimuat';this.style.minHeight='80px';this.style.background='var(--tint)';this.style.border='1px solid var(--border)'">
           </a>
           <figcaption><span class="fig-num">05</span>Penalaran Analitis, Tabel dan Grafik</figcaption>
-        </figure>
-        <figure class="fig">
+        </figure>        <figure class="fig">
           <a href="docs/perbandingan-senilai-dan-berbalik-nilai.png" target="_blank" rel="noopener">
-            <img src="docs/infografis/perbandingan-senilai-dan-berbalik-nilai.png" alt="Infografis: Perbandingan Senilai dan Berbalik Nilai" loading="lazy" onerror="this.alt='Infografis tidak dimuat. Buka PDF langsung dari tautan.';this.style.minHeight='80px';this.style.background='var(--highlight)'">
+            <img src="docs/infografis/perbandingan-senilai-dan-berbalik-nilai.png" alt="Infografis: Perbandingan Senilai dan Berbalik Nilai" loading="lazy" onerror="this.alt='Infografis tidak dimuat';this.style.minHeight='80px';this.style.background='var(--tint)';this.style.border='1px solid var(--border)'">
           </a>
           <figcaption><span class="fig-num">06</span>Perbandingan Senilai dan Berbalik Nilai</figcaption>
-        </figure>
-        <figure class="fig">
+        </figure>        <figure class="fig">
           <a href="docs/silogisme.png" target="_blank" rel="noopener">
-            <img src="docs/infografis/silogisme.png" alt="Infografis: Silogisme" loading="lazy" onerror="this.alt='Infografis tidak dimuat. Buka PDF langsung dari tautan.';this.style.minHeight='80px';this.style.background='var(--highlight)'">
+            <img src="docs/infografis/silogisme.png" alt="Infografis: Silogisme" loading="lazy" onerror="this.alt='Infografis tidak dimuat';this.style.minHeight='80px';this.style.background='var(--tint)';this.style.border='1px solid var(--border)'">
           </a>
           <figcaption><span class="fig-num">07</span>Silogisme</figcaption>
         </figure>
     </div>
-  </section>
-
-  <section class="block" id="asesmen">
-    <div class="head">
-      <h2>Asesmen Diagnostik</h2>
-      <p>Ukur titik lemah Anda melalui paket evaluasi terstruktur.</p>
-    </div>
-    <ol class="rows">
-            <li class="row">
-        <a class="row-link" href="docs/asesmen-diagnostik-paket-a-soal.pdf" target="_blank" rel="noopener">
-          <span class="num">01</span>
-          <span class="row-body">
-            <span class="row-title">Paket A: soal</span>
-            <span class="row-desc">Paket awal untuk mengukur titik lemah sebelum belajar.</span>
-          </span>
-          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
-        </a>
-      </li>
-      <li class="row">
-        <a class="row-link" href="docs/asesmen-diagnostik-paket-b-soal.pdf" target="_blank" rel="noopener">
-          <span class="num">02</span>
-          <span class="row-body">
-            <span class="row-title">Paket B: soal</span>
-            <span class="row-desc">Paket paralel sebagai pembanding hasil paket A.</span>
-          </span>
-          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
-        </a>
-      </li>
-      <li class="row">
-        <a class="row-link" href="docs/kunci-pembahasan-asesmen-paket-a.pdf" target="_blank" rel="noopener">
-          <span class="num">03</span>
-          <span class="row-body">
-            <span class="row-title">Paket A: kunci dan pembahasan</span>
-            <span class="row-desc">Pembahasan tiap butir, bukan hanya kunci jawaban.</span>
-          </span>
-          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
-        </a>
-      </li>
-      <li class="row">
-        <a class="row-link" href="docs/kunci-pembahasan-asesmen-paket-b.pdf" target="_blank" rel="noopener">
-          <span class="num">04</span>
-          <span class="row-body">
-            <span class="row-title">Paket B: kunci dan pembahasan</span>
-            <span class="row-desc">Pembahasan tiap butir untuk paket B.</span>
-          </span>
-          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
-        </a>
-      </li>
-    </ol>
-  </section>
-
-  <section class="block" id="tambahan">
-    <div class="head">
-      <h2>Berkas Pendukung</h2>
-      <p>Materi tambahan untuk optimasi skor akhir.</p>
-    </div>
-    <ol class="rows">
-            <li class="row">
-        <a class="row-link" href="docs/kunci-terlarang-wajib-tahu.pdf" target="_blank" rel="noopener">
-          <span class="num">01</span>
-          <span class="row-body">
-            <span class="row-title">Kunci Terlarang Wajib Tahu</span>
-            <span class="row-desc">Pola jawaban jebakan yang paling sering bikin salah.</span>
-          </span>
-          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
-        </a>
-      </li>
-      <li class="row">
-        <a class="row-link" href="docs/bundling-fokus-tiu-gelombang-1.pdf" target="_blank" rel="noopener">
-          <span class="num">02</span>
-          <span class="row-body">
-            <span class="row-title">Bundling Fokus TIU Gelombang 1</span>
-            <span class="row-desc">Kumpulan soal terbaru untuk gelombang pertama.</span>
-          </span>
-          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
-        </a>
-      </li>
-      <li class="row">
-        <a class="row-link" href="docs/video-pembelajaran-skd-cpns.pdf" target="_blank" rel="noopener">
-          <span class="num">03</span>
-          <span class="row-body">
-            <span class="row-title">Daftar Video Pembelajaran SKD CPNS</span>
-            <span class="row-desc">Tautan video pendamping untuk tiap materi.</span>
-          </span>
-          <span class="row-meta"><span class="row-go">Buka PDF</span></span>
-        </a>
-      </li>
-    </ol>
   </section>
 </main>
 
